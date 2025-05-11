@@ -2,6 +2,6 @@ module.exports = {
     mongodbUri: process.env.MONGO_URI || 'mongodb+srv://fintradify:mRU4GJ82NQLfXPRX@hrportal.8fwiltn.mongodb.net/?retryWrites=true&w=majority&appName=Hrportal',
     port: process.env.PORT || 5000,
     jwtSecret: process.env.JWT_SECRET || '8405012cf44c81aec7d57428f4c81a2c3bbdb3f6f83e904356aec01c7ff346d4534be4bf323582cf717cd462f0dc05c438b4a6954a3652f6d0c2a2deb2c40f86a3701328aa5e4e44eb2573f01fc705598615453c323227b7a94b6d3a1aa5b9ce624991c1efbd178b00b93db7aaf0fc1792d7d19321f19cfb1d91d3a3a41477b6398c14dbe489cde502a9a00f305eaf55ae57e2a7077db25153d74690e0a5f2f5eade280f26ed9fd7d3759fe3c3167c3340ecaf25d9713f3ce73d0fa8629c338b311ed76e0589f862af47066e152a2ba73382728b56628eacb5c7ba3589696a0a46b804f31fda38b20ec6d558b6863ffaf50163578f9ed75295b65fd5549ecdac',
-    corsOrigin: process.env.CORS_ORIGIN || 'https://careersachiever.com',
+    corsOrigin: process.env.CORS_ORIGIN || 'https://hr-portal-h69j.onrender.com/',
     nodeEnv: process.env.NODE_ENV || 'development',
   };
