@@ -13,6 +13,8 @@ const {
   updateLeaveStatus,
 } = require('../controllers/adminController');
 const auth = require('../middleware/auth');
+const parser = require('../middleware/cloudinaryStorage');
+
 const multer = require('multer');
 
 const storage = multer.diskStorage({
@@ -30,8 +32,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.post('/login', login);
-router.post('/employee', auth('admin'), upload.single('photo'), addEmployee);
-router.put('/employee/:id', auth('admin'), upload.single('photo'), editEmployee);
+router.post('/employee', auth('admin'), parser.single('photo'), addEmployee);
+router.put('/employee/:id', auth('admin'), parser.single('photo'), editEmployee);
 router.delete('/employee/:id', auth('admin'), deleteEmployee);
 router.post('/upload-csv', auth('admin'), upload.single('csv'), uploadCSV);
 router.get('/employees', auth('admin'), getEmployees);

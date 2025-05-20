@@ -26,7 +26,9 @@ exports.login = async (req, res) => {
 
 exports.addEmployee = async (req, res) => {
   const { name, email, designation, salary } = req.body;
-  const photo = req.file ? `/uploads/photos/${req.file.filename}` : null;
+  // const photo = req.file ? `/uploads/photos/${req.file.filename}` : null;
+  const photo = req.file ? req.file.path : null;
+
 
   // Validate required fields
   if (!name || !email || !designation || !salary) {
@@ -69,7 +71,9 @@ exports.addEmployee = async (req, res) => {
 exports.editEmployee = async (req, res) => {
   const { id } = req.params;
   const { name, email, designation, salary } = req.body;
-  const photo = req.file ? `/uploads/photos/${req.file.filename}` : null;
+  // const photo = req.file ? `/uploads/photos/${req.file.filename}` : null;
+  const photo = req.file ? req.file.path : null;
+
   try {
     const employee = await Employee.findById(id);
     if (!employee) return res.status(404).json({ msg: 'Employee not found' });
