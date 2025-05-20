@@ -19,6 +19,10 @@ app.use('/api/admin', require('./routes/adminRoutes'));
 app.use('/api/employee', require('./routes/employeeRoutes'));
 app.use('/api/attendance', require('./routes/attendanceRoutes'));
 app.use('/api', attendanceRoutes);
+ 
+app.get('/',(req,res)=>{
+    res.status(200).send('server is running');
+})
 
 // Catch-all route
 app.use(salaryController.notFound);
